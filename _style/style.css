@@ -1,0 +1,735 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /**border: 1px solid red;**/
+  --font-family-am: 'Arsenal', sans-serif;
+  --font-family-text: 'Poppins', sans-serif;
+  --typoSizeBody: 15px;
+  --clearWhite: #ececee;
+  --deepGreen: #005f59;
+  --lightGreen: #01a187;
+}
+
+.landingPage{
+	font-family: var(--font-family-text);
+	font-weight: 300;
+	font-size: var(--typoSizeBody);
+	line-height: 1.7;
+	color: var(--clearWhite);
+	background-color: var(--deepGreen);
+	overflow: hidden;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 4%;
+  height: 100vh;
+  width: 100%;
+}
+
+.landingPage a{
+  width: 100px;
+  height: auto;
+}
+
+.landingPage a img{
+  width: 70px;
+  height: auto;
+  display: block;
+}
+
+.logo {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	display: block;
+	z-index: 5;
+	transition: all 250ms linear;
+}
+
+.section-center{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.section-center p{
+  font-family: var(--font-family-am);
+  font-weight: 200;
+  font-size: 7vw;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.4em;
+}
+
+/** ---------------------- DÉBUT MENU ASTON MARTIN ---------------------- **/
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+  position: absolute;
+  left: -9999px;
+}
+.menu-icon:checked + label,
+.menu-icon:not(:checked) + label{
+  position: fixed;
+  top: 63px;
+  right: 75px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+.menu-icon:checked + label:before,
+.menu-icon:not(:checked) + label:before{
+  position: absolute;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 20px;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  border-top: 3px solid #ececee;
+  border-bottom: 3px solid #ececee;
+  transition: border-width 100ms 1500ms ease, 
+              top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+              height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1), 
+              background-color 200ms ease,
+              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu-icon:checked + label:after,
+.menu-icon:not(:checked) + label:after{
+  position: absolute;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  z-index: 20;
+  top: 12px;
+  background-color: #ececee;
+  margin-top: -1px;
+  transition: width 100ms 1750ms ease, 
+              right 100ms 1750ms ease,
+              margin-top 100ms ease, 
+              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu-icon:checked + label:before{
+  top: 11px;
+  transform: rotate(45deg);
+  height: 3px;
+  background-color: #ececee;
+  border-width: 0;
+  transition: border-width 100ms 340ms ease, 
+              top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+              height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1), 
+              background-color 200ms 500ms ease,
+              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu-icon:checked + label:after{
+  width: 30px;
+  margin-top: 0;
+  right: 0;
+  transform: rotate(-45deg);
+  transition: width 100ms ease,
+              right 100ms ease,  
+              margin-top 100ms 500ms ease, 
+              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav{
+  position: fixed;
+  top: 33px;
+  right: 50px;
+  display: block;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+  z-index: 9;
+  overflow: hidden;
+  box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
+  background-color: var(--lightGreen);
+  animation: border-transform 7s linear infinite;
+  transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),  
+              right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+              transform 250ms 1100ms ease,
+              width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
+              height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes border-transform{
+    0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
+  14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+  28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+  42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+  56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+  70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+  84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+}
+
+.menu-icon:checked ~ .nav {
+  animation-play-state: paused;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 200%;
+  height: 200%;
+  transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),  
+              right 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
+              transform 250ms 700ms ease,
+              width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
+              height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav ul{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+  text-align: center;
+  transform: translateY(-50%);
+  list-style: none;
+}
+.nav ul li{
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  text-align: center;
+  list-style: none;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: all 250ms linear;
+}
+.nav ul li:nth-child(1){
+  transition-delay: 200ms;
+}
+.nav ul li:nth-child(2){
+  transition-delay: 150ms;
+}
+.nav ul li:nth-child(3){
+  transition-delay: 100ms;
+}
+.nav ul li:nth-child(4){
+  transition-delay: 50ms;
+}
+.nav ul li a{
+  font-family: var(--font-family-am);
+  font-size: 9vh;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.2;
+  font-weight: 800;
+  position: relative;
+  color: #ececee;
+  transition: all 250ms linear;
+}
+.nav ul li a:hover{
+  text-decoration: none;
+  color: #e0e6e6;
+}
+.nav ul li a:after{
+  display: block;
+  position: absolute;
+  top: 50%;
+  content: '';
+  height: 2vh;
+  margin-top: -1vh;
+  width: 0;
+  left: 0;
+  background-color: var(--deepGreen);
+  opacity: 0.8;
+  transition: width 250ms linear;
+}
+.nav ul li a:hover:after{
+  width: 100%;
+}
+
+.menu-icon:checked ~ .nav  ul li {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 350ms ease,
+              transform 250ms ease;
+}
+.menu-icon:checked ~ .nav ul li:nth-child(1){
+  transition-delay: 1400ms;
+}
+.menu-icon:checked ~ .nav ul li:nth-child(2){
+  transition-delay: 1480ms;
+}
+.menu-icon:checked ~ .nav ul li:nth-child(3){
+  transition-delay: 1560ms;
+}
+.menu-icon:checked ~ .nav ul li:nth-child(4){
+  transition-delay: 1640ms;
+}
+
+/** ---------------------- FIN MENU ASTON MARTIN ---------------------- **/
+
+@media screen and (max-width: 991px) {
+  .menu-icon:checked + label,
+  .menu-icon:not(:checked) + label{
+    right: 55px;
+  }
+  .logo {
+    left: 30px;
+  }
+  .nav{
+    right: 30px;
+  }
+  .landingPage p{
+    font-size: 9vw;
+  }
+  .nav ul li a{
+    font-size: 4vh;
+  }
+  .nav ul li a:after{
+    top: 60%;
+    height: 1vh;
+  }
+}
+
+/** ---------------------- DÉBUT NOTRE UNIVERS ---------------------- **/
+
+strong {
+  font-weight: 600;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  background: #fdfdfd;
+  font-family: var(--font-family-text);
+  letter-spacing: .03em;
+  color: #212121;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background: #212121;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  z-index: 100;
+}
+
+header img{
+  width: 90px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main h2 span {
+  color: var(--deepGreen);
+}
+
+main p {
+  line-height: 1.5;
+  font-weight: 200;
+  margin: 20px 0;
+}
+
+main small {
+  font-weight: 300;
+  color: #888;
+}
+
+#nav-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+#nav-container .bg {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  background: #000;
+}
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: .6;
+}
+#nav-container * {
+  visibility: visible;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  height: 70px;
+  width: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-left: 25px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #aaa;
+  transition: .3s;
+}
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+#nav-container:focus-within .button {
+  pointer-events: none;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(1) {
+  transform: translate3d(0,8px,0) rotate(45deg);
+}
+#nav-container:focus-within .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(3) {
+  transform: translate3d(0,-8px,0) rotate(-45deg);
+}
+
+#nav-content {
+  margin-top: 70px;
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 70px);
+  background: #ececec;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  transform: translateX(-100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+}
+
+#nav-content ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+}
+
+#nav-content li a {
+  font-family: var(--font-family-am);
+  padding: 10px 5px;
+  display: block;
+  text-transform: uppercase;
+  transition: color .1s;
+  font-weight: 600;
+}
+
+#nav-content li a:hover {
+  color: var(--deepGreen);
+}
+
+#nav-content li:not(.small) + .small {
+  margin-top: auto;
+}
+
+#nav-container:focus-within #nav-content {
+  transform: none;
+}
+
+.page a,
+.page a:visited,
+.page a:focus,
+.page a:active,
+.page a:link {
+  text-decoration: none;
+  outline: 0;
+}
+
+.page a {
+  color: currentColor;
+  transition: .2s ease-in-out;
+}
+
+.page h1, h2, h3, h4 {
+  margin: 0;
+}
+
+.page ul {
+  padding: 0;
+  list-style: none;
+}
+
+.content{
+  padding: 20px 30px 0px 30px;
+}
+
+.firstParaContent{
+  font-weight: 400;
+  text-align: justify;
+}
+
+.historyAM{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start;
+  padding: 50px 0;
+  width: 100%;
+  height: auto;
+}
+
+.imgHistory{
+  width: 50%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.imgHistory img{
+  width: 100%;
+  border-radius: 1em;
+}
+
+.paraHistory{
+  width: 40%;
+  height: auto;
+}
+
+.titleParaHistory{
+  font-weight: 600;
+}
+
+.descParaHistory{
+  text-align: justify;
+  font-weight: 400;
+}
+
+.imgHistory:nth-child(12){
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 991px) {
+  main video{
+    margin-top: 70px;
+  }
+  
+  .imgHistory, .paraHistory{
+    width: 100%;
+  }
+  .imgHistory{
+    margin-bottom: 0px;
+  }
+  .historyAM :nth-child(1){
+    order: 1;
+  }
+  .historyAM :nth-child(2){
+    order: 2;
+  }
+  .historyAM :nth-child(3){
+    order: 4;
+  }
+  .historyAM :nth-child(4){
+    order: 3;
+  }
+  .historyAM :nth-child(5){
+    order: 5;
+  }
+  .historyAM :nth-child(6){
+    order: 6;
+  }
+  .historyAM :nth-child(7){
+    order: 8;
+  }
+  .historyAM :nth-child(8){
+    order: 7;
+  }
+  .historyAM :nth-child(9){
+    order: 9;
+  }
+  .historyAM :nth-child(10){
+    order: 10;
+  }
+  .historyAM :nth-child(11){
+    order: 12;
+  }
+  .historyAM :nth-child(12){
+    order: 11;
+  }
+}
+
+/** ---------------------- FIN NOTRE UNIVERS ---------------------- **/
+
+/** ---------------------- DÉBUT NOS MODELES ---------------------- **/
+main iframe{
+  min-height: 100vh;
+  width: auto;
+}
+.product{
+  width: 100%;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.leftCat{
+  width: 40%;
+  height: 80vh;
+  background-color: var(--lightGreen);
+  z-index: 90;
+}
+.rightCat{
+  width: 40%;
+  height: 80vh;
+  background-color: var(--clearWhite);
+}
+.marqueLeftCat{
+  margin: 0;
+  padding: 30px;
+  font-size: 4em;
+  font-weight: 800;
+  color: var(--deepGreen);
+}
+.leftCat img{
+  position: absolute;
+  left: 50px;
+  z-index: 90;
+  width: 50vw;
+}
+.modeleRightCat{
+  margin: 0;
+  padding: 30px 30px 0px 30px;
+  font-size: 2em;
+  font-weight: 800;
+  color: var(--lightGreen);
+}
+.catCarRightCat{
+  margin: 0;
+  padding-left: 30px;
+  font-size: 0.7em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgb(156, 156, 156);
+}
+.descRightCat{
+  margin: 0;
+  padding: 30px 30px 0px 30px;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #000;
+  text-align: justify;
+}
+.caractéristiquesRightCat{
+  margin: 0;
+  padding: 30px 30px 30px 50px;
+  font-size: 0.9em;
+  font-weight: 300;
+  color: #000;
+  text-align: justify;
+}
+.strongCat{
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  .product{
+    padding: 0px;
+    width: 100%;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .leftCat,.rightCat{
+    width: 100%;
+    height: auto;
+  }
+  .leftCat{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .marqueLeftCat{
+    padding: 10px;
+    font-size: 2em;
+  }
+  .leftCat img{
+    position: relative;
+    left: 0px;
+    z-index: 90;
+    width: 50vw;
+  }
+  .modeleRightCat{
+    padding: 10px;
+    padding-bottom: 0px;
+  }
+  .catCarRightCat{
+    padding: 10px;
+    padding-top: 0px;
+  }
+  .descRightCat{
+    padding: 10px;
+  }
+  .caractéristiquesRightCat{
+    padding: 10px;
+  }
+  .rightCat{
+    margin-bottom: 20px;
+  }
+}
+/** ---------------------- FIN NOS MODELES ---------------------- **/
+
+/** ---------------------- DÉBUT SEEN IN MOVIES ---------------------- **/
+
+/** ---------------------- FIN SEEN IN MOVIES ---------------------- **/
